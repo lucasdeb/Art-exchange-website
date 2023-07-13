@@ -6,7 +6,7 @@ include('perfil.php');
 if ($_SESSION['signed_in'] == 0){
     session_start();
     session_destroy();
-    header('Location: http://localhost/uca-pw-proyecto-2022/assets/common/login.php');
+    header('Location: http://localhost/pwfinal/assets/common/login.php');
     die();
 }
 

@@ -64,7 +64,7 @@ $contenido = <<<LOGIN
                     <div class="contenido">
                         <h3>¿Sos nuevo?</h3>
                         <p>En pocos pasos sumate al mejor marketplace de NFTs y arte digital que vas a conocer.</p>
-                        <a href="http://localhost/uca-pw-proyecto-2022/assets/common/registrar.php"
+                        <a href="http://localhost/pwfinal/assets/common/registrar.php"
                             <button class="btn transparente" id="login-btn">Registrate</button>
                         </a>
                     </div>
