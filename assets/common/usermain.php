@@ -46,22 +46,22 @@ $contenido = <<<html
                     <h3>Mercado</h3>
                 </a>
 
-                <a href="./vender.html">
+                <a href="./vender.php">
                     <img src="../imgs/icons/cash-register.svg" alt="" class="iconos" style="width: 20px;">
                     <h3>Vender</h3>
                 </a>
 
-                <a href="./subir.html">
+                <a href="./subir.php">
                     <img src="../imgs/icons/upload.svg" alt="" class="iconos" style="width: 20px;">
                     <h3>Subir</h3>
                 </a>
 
-                <a href="./analisis.html">
+                <a href="./analisis.php">
                     <img src="../imgs/icons/magnifying-glass-chart.svg" alt="" class="iconos" style="width: 20px;">
                     <h3>Analisis</h3>
                 </a>
 
-                <!--<a href="./carrito.html">
+                <!--<a href="./carrito.php">
                     <img src="../imgs/components/basket-cart-icon-27.png" style="width:20px;height: 20px;">
                     <h3>Carrito</h3>
                     <span class="cant-productos">3</span>
@@ -91,7 +91,7 @@ $contenido = <<<html
                         <img src="../imgs/nft-art/38.jpeg" alt="">
                         <h3>Ultima venta: 19.8 ETH</h3>
                     </div>
-                    <a href="../common/payment.html">Comprar</a>
+                    <a href="../common/payment.php">Comprar</a>
                 </div>
 
 
@@ -105,7 +105,7 @@ $contenido = <<<html
                         <img src="../imgs/nft-art/3.jpeg" alt="">
                         <h3>Ultima venta: 17.9 SOL</h3>
                     </div>
-                    <a href=../common/payment.html>Comprar</a>
+                    <a href=../common/payment.php>Comprar</a>
                 </div>
 
 
@@ -119,7 +119,7 @@ $contenido = <<<html
                         <img src="../imgs/nft-art/32.jpeg" alt="">
                         <h3>Ultima venta: 8.10 ETH</h3>
                     </div>
-                    <a href="../common/payment.html">Comprar</a>
+                    <a href="../common/payment.php">Comprar</a>
                 </div>
             </div>
 
@@ -205,7 +205,7 @@ $contenido = <<<html
                     <img src="../imgs/perfiles/perfil5.jpeg" alt="">
                     <h3>Usuario desde: 03/22</h3>
                     <h3>Transaccionado: 37.3K USDT</h3>
-                    <a href="./perfiles/perfil1.html" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
+                    <a href="./perfiles/perfil1.php" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
                 </div>
 
                 <div class="perfil-verificado">
