@@ -1,3 +1,16 @@
+<?php
+include('config.php');
+include('perfil.php');
+
+
+if ($_SESSION['signed_in'] == 0){
+    session_start();
+    session_destroy();
+    header('Location: http://localhost/uca-pw-proyecto-2022/assets/common/login.php');
+    die();
+}
+
+$contenido = <<<html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +41,7 @@
 
             <div class="sidebar">
 
-                <a href="./usermain.html" class="activo">
+                <a href="./usermain.php" class="activo">
                     <img src="../imgs/icons/shop.svg" alt="" class="iconos" style="width: 20px;">
                     <h3>Mercado</h3>
                 </a>
@@ -54,7 +67,7 @@
                     <span class="cant-productos">3</span>
                 </a>-->
 
-                <a href="../../index.html">
+                <a href="logout.php">
                     <img src="../imgs/icons/right-from-bracket.svg" alt="" class="iconos" style="width: 20px;">
                     <h3>Cerrar Sesión</h3>
                 </a>
@@ -73,11 +86,12 @@
                     <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
                     <div class="medio">
                         <div class="izquierda">
-                            <h1>MutantApe</h1>
+                            <h1>MutantApe#6824</h1>
                         </div>
                         <img src="../imgs/nft-art/38.jpeg" alt="">
                         <h3>Ultima venta: 19.8 ETH</h3>
                     </div>
+                    <a href="../common/payment.html">Comprar</a>
                 </div>
 
 
@@ -86,11 +100,12 @@
                     <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
                     <div class="medio">
                         <div class="izquierda">
-                            <h1>MoonOwls</h1>
+                            <h1>MoonOwls#938</h1>
                         </div>
                         <img src="../imgs/nft-art/3.jpeg" alt="">
                         <h3>Ultima venta: 17.9 SOL</h3>
                     </div>
+                    <a href=../common/payment.html>Comprar</a>
                 </div>
 
 
@@ -99,17 +114,18 @@
                     <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
                     <div class="medio">
                         <div class="izquierda">
-                            <h1>Doodles</h1>
+                            <h1>Doodles#420</h1>
                         </div>
                         <img src="../imgs/nft-art/32.jpeg" alt="">
                         <h3>Ultima venta: 8.10 ETH</h3>
                     </div>
+                    <a href="../common/payment.html">Comprar</a>
                 </div>
             </div>
 
-            <!-- Top collections -->
+            <!-- Top arte (Arte mas caro) -->
             <div class="top-colecciones">
-                <h2>Colecciones populares</h2>
+                <h2>Arte popular</h2>
                 <table>
                     <thead>
                         <tr>
@@ -274,11 +290,10 @@
 
                 <div class="perfil">
                     <div class="informacion">
-                        <p>Hola, <b>Tomas</b></p>
-                        <small class="texto">Usuario</small>
+                        <p>Hola, <b>{$username}</b></p>
+                        <small class="texto">{$nivel}</small>
                     </div>
                     <div class="foto-perfil">
-                        <img src="../imgs/misc/tomas-prodan.jpeg">
                     </div>
                 </div>
             </div>
@@ -327,13 +342,15 @@
                     </div>
                 </div>
             </div>
-
             <!--  -->
-
-
         </div>
-
     </div>
 </body>
 
 </html>
+
+html;
+
+echo $contenido;
+
+?>
