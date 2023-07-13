@@ -1,4 +1,8 @@
 <?php
+
+include('config.php');
+include('perfil.php');
+
 $contenido = <<<html
         <!DOCTYPE html>
         <html lang="en">

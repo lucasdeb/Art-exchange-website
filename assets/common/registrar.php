@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else{
         echo "Algo salio mal";
     }
-    header("Location: http://localhost/uca-pw-proyecto-2022/assets/common/login.php");
+    header("Location: http://localhost/pwfinal/assets/common/login.php");
     die();
 }
 
@@ -60,7 +60,7 @@ $contenido = <<<html
                     <div class="contenido">
                         <h3>¿Yá tenés tu cuenta?</h3>
                         <p>Ingresa tus datos y segui coleccionando tus NFTs.</p>
-                        <a href="http://localhost/uca-pw-proyecto-2022/assets/common/login.php">
+                        <a href="http://localhost/pwfinal/assets/common/login.php">
                         <button class="btn transparente" id="login-btn">Iniciá Sesión</button>
                         </a>
                     </div>
