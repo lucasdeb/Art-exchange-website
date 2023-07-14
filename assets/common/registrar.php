@@ -1,27 +1,25 @@
 <?php
 
 include('config.php');
-include('perfil.php');
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $alias = $_POST['User_Alias'];
     $email = $_POST['User_Email'];
     $password = $_POST['User_Password'];
-
+    
     $sql = "INSERT INTO Usuarios (User_Alias, User_Email, User_Password, User_Level) VALUES ('$alias', '$email', '$password', 0)";
 
     if ($link->query($sql) == TRUE) {
-        echo "Se guardo con exito!";
-    }
-    else{
-        echo "Algo salio mal";
+        echo "<script>alert('Los datos se guardaron con exito!')</script>";
+    } else {
+        echo "<script>alert('Algo salio mal')</script>";
     }
     header("Location: http://localhost/pwfinal/assets/common/login.php");
     die();
 }
 
 
-$contenido = <<<html
+$conten = <<<html
     <!DOCTYPE html>
     <html lang="en">
 
@@ -31,6 +29,7 @@ $contenido = <<<html
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/index.css">
         <link rel="icon" type="image/x-icon" href="/assets/imgs/misc/favicon.ico">
+        <script src="../scripts/login.js"></script>
         <title>Registrar</title>
     </head>
     <body>
@@ -73,6 +72,6 @@ $contenido = <<<html
 
 html;
 
-echo $contenido;
+echo $conten;
 
 ?>

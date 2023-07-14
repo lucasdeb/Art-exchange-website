@@ -23,9 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: usermain.php');
         die();
     }
-    else{
-        echo '<script>alert("Usuario o constraseña incorrecta!")</script>';
-    }
 }
 
 $contenido = <<<LOGIN
@@ -38,6 +35,7 @@ $contenido = <<<LOGIN
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/index.css">
         <link rel="icon" type="image/x-icon" href="/assets/imgs/misc/favicon.ico">
+        <script src="../scripts/login.js"></script>
         <title>Login</title>
     </head>
 
@@ -65,7 +63,7 @@ $contenido = <<<LOGIN
                     <div class="contenido">
                         <h3>¿Sos nuevo?</h3>
                         <p>En pocos pasos sumate al mejor marketplace de NFTs y arte digital que vas a conocer.</p>
-                        <a href="http://localhost/pwfinal/assets/common/registrar.php"
+                        <a href="http://localhost/pwfinal/assets/common/registrar.php">
                             <button class="btn transparente" id="login-btn">Registrate</button>
                         </a>
                     </div>
@@ -73,7 +71,6 @@ $contenido = <<<LOGIN
                 </div>
             </div>
         </div>
-        <script src="../scripts/login.js"></script>
     </body>
 
     </html>
