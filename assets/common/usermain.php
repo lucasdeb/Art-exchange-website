@@ -110,12 +110,7 @@ $texto = <<<pag
             <div class="top-colecciones">
                 {$perf($res)}
             </div>
-
-
         </main>
-
-
-
         <!-- panel derecha -->
 
         <div class="derecha">
