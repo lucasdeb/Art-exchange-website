@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $sql = "INSERT INTO Usuarios (User_Alias, User_Email, User_Password, User_Level) VALUES ('$alias', '$email', '$password', 0)";
 
-    if ($link->query($sql) === TRUE) {
+    if ($link->query($sql) == TRUE) {
         echo "Se guardo con exito!";
     }
     else{

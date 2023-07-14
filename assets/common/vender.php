@@ -232,4 +232,6 @@ $contenido = <<<html
 
 html;
 
+echo $contenido;
+
 ?>

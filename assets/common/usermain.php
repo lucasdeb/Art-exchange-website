@@ -1,6 +1,11 @@
 <?php
-include('config.php');
 include('perfil.php');
+include('getdestacadas.php');
+include('getperfil.php');
+include('config.php');
+
+$dest = destacadas($result);
+$perf = 'perfil';
 
 
 if ($_SESSION['signed_in'] == 0){
@@ -9,6 +14,8 @@ if ($_SESSION['signed_in'] == 0){
     header('Location: http://localhost/pwfinal/assets/common/login.php');
     die();
 }
+
+
 
 $contenido = <<<html
 <!DOCTYPE html>
@@ -79,48 +86,10 @@ $contenido = <<<html
 
         <main>
             <h1>Mercado</h1>
-
             <!-- destacada 1 -->
+
             <div class="informacion">
-                <div class="colecciones-destacada-1">
-                    <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
-                    <div class="medio">
-                        <div class="izquierda">
-                            <h1>MutantApe#6824</h1>
-                        </div>
-                        <img src="../imgs/nft-art/38.jpeg" alt="">
-                        <h3>Ultima venta: 19.8 ETH</h3>
-                    </div>
-                    <a href="../common/payment.php">Comprar</a>
-                </div>
-
-
-                <!-- destacada 2 -->
-                <div class="colecciones-destacada-2">
-                    <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
-                    <div class="medio">
-                        <div class="izquierda">
-                            <h1>MoonOwls#938</h1>
-                        </div>
-                        <img src="../imgs/nft-art/3.jpeg" alt="">
-                        <h3>Ultima venta: 17.9 SOL</h3>
-                    </div>
-                    <a href=../common/payment.php>Comprar</a>
-                </div>
-
-
-                <!-- destacada 3 -->
-                <div class="colecciones-destacada-3">
-                    <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
-                    <div class="medio">
-                        <div class="izquierda">
-                            <h1>Doodles#420</h1>
-                        </div>
-                        <img src="../imgs/nft-art/32.jpeg" alt="">
-                        <h3>Ultima venta: 8.10 ETH</h3>
-                    </div>
-                    <a href="../common/payment.php">Comprar</a>
-                </div>
+            {$dest[0]}{$dest[1]}{$dest[2]}
             </div>
 
             <!-- Top arte (Arte mas caro) -->
@@ -198,79 +167,15 @@ $contenido = <<<html
 
 
             <h2>Usuarios verificados</h2>
-            <div class="perfiles-verificados">
 
-                <div class="perfil-verificado">
-                    <h1>satoshi36</h1>
-                    <img src="../imgs/perfiles/perfil5.jpeg" alt="">
-                    <h3>Usuario desde: 03/22</h3>
-                    <h3>Transaccionado: 37.3K USDT</h3>
-                    <a href="./perfiles/perfil1.php" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
+html;
 
-                <div class="perfil-verificado">
-                    <h1>bullMarket.ok</h1>
-                    <img src="../imgs/perfiles/perfil6.jpeg" alt="">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 23.4K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
+echo $contenido;
 
-                <div class="perfil-verificado">
-                    <h1>boquita.eth</h1>
-                    <img src="../imgs/perfiles/perfil7.jpeg">
-                    <h3>Usuario desde: 09/21</h3>
-                    <h3>Transaccionado: 73.2K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>ih8.bcra</h1>
-                    <img src="../imgs/perfiles/perfil8.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 13.1K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>cryptoMasacre</h1>
-                    <img src="../imgs/perfiles/perfil9.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 11.0K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>scalonetaHodl</h1>
-                    <img src="../imgs/perfiles/perfil10.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 9.12K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>mrPrecios</h1>
-                    <img src="../imgs/perfiles/perfil11.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 9.12K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>doge2theMoon</h1>
-                    <img src="../imgs/perfiles/perfil12.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 9.12K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
-
-                <div class="perfil-verificado">
-                    <h1>kanyeLover911</h1>
-                    <img src="../imgs/perfiles/perfil13.jpeg">
-                    <h3>Usuario desde: 02/22</h3>
-                    <h3>Transaccionado: 9.12K USDT</h3>
-                    <a href="#" class="visitar-perfil"><button class="ver-perfil">Visitar</button></a>
-                </div>
+$texto = <<<pag
+            <div class="top-colecciones">
+                {$perf($res)}
+            </div>
 
 
         </main>
@@ -290,7 +195,7 @@ $contenido = <<<html
 
                 <div class="perfil">
                     <div class="informacion">
-                        <p>Hola, <b>{$username}</b></p>
+                        <p>Hola, <b>{$usern}</b></p>
                         <small class="texto">{$nivel}</small>
                     </div>
                     <div class="foto-perfil">
@@ -349,8 +254,8 @@ $contenido = <<<html
 
 </html>
 
-html;
+pag;
 
-echo $contenido;
+echo $texto;
 
 ?>

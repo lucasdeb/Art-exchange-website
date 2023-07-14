@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $alias = $_POST['User_Alias'];
     $password = $_POST['User_Password'];
 
-    $sql = "SELECT User_Alias, User_Password, User_Level FROM Usuarios WHERE User_Alias ='$alias' AND User_Password='$password'";
+    $sql = "SELECT User_Alias, User_Password, User_Level, User_Id FROM Usuarios WHERE User_Alias ='$alias' AND User_Password='$password'";
     $result = $link->query($sql);
 
 
@@ -19,11 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         //guardamos el alias y el nivel de usuario
         $_SESSION['User_Alias'] = $datos['User_Alias'];
         $_SESSION['User_Level'] = $datos['User_Level'];
+        $_SESSION['User_Id'] = $datos['User_Id'];
         header('Location: usermain.php');
         die();
     }
     else{
-        echo 'Usuario o constraseña incorrecta!';
+        echo '<script>alert("Usuario o constraseña incorrecta!")</script>';
     }
 }
 
