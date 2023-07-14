@@ -114,7 +114,7 @@ $contenido = <<<html
 
                         <div class="perfil">
                             <div class="informacion">
-                                <p>Hola, <b>{$username}</b></p>
+                                <p>Hola, <b>{$usern}</b></p>
                                 <small class="texto">{$nivel}</small>
                             </div>
                         </div>

@@ -2,10 +2,12 @@
 include('perfil.php');
 include('getdestacadas.php');
 include('getperfil.php');
+include('tablaPopular.php');
 include('config.php');
 
 $dest = destacadas($result);
 $perf = 'perfil';
+$tab1 = 'cargarTabla';
 
 
 if ($_SESSION['signed_in'] == 0){
@@ -93,84 +95,16 @@ $contenido = <<<html
             </div>
 
             <!-- Top arte (Arte mas caro) -->
-            <div class="top-colecciones">
-                <h2>Arte popular</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Coleccion</th>
-                            <th></th>
-                            <th>Volumen</th>
-                            <th>Volumen (USDT)</th>
-                            <th>Precio Piso</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td><span class="top1">1</span></td>
-                            <td><img src="../imgs/nft-art/35.jpeg"></td>
-                            <td>MutantApeYachtClub</td>
-                            <td>7.5K ETH</td>
-                            <td>$10.9M<small class="abajo"> -33.8%</small></td>
-                            <td>14.6 ETH</td>
-                            <td><a href="../../assets/common/art/00.html">Ver</a></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="top2">2</span></td>
-                            <td><img src="../imgs/nft-art/43.jpeg"></td>
-                            <td>ABC</td>
-                            <td>293.3K SOL</td>
-                            <td>$9.6M<small class="arriba"> +109.89%</small></td>
-                            <td>28.47 SOL</td>
-                            <td><a href="#">Ver</a></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="top3">3</span></td>
-                            <td><img src="../imgs/nft-art/42.jpeg"></td>
-                            <td>RENGA</td>
-                            <td>4.4K ETH</td>
-                            <td>$5.7M<small class="arriba"> +192%</small></td>
-                            <td>2.50 ETH</td>
-                            <td><a href="#">Ver</a></td>
-                        </tr>
-
-                        <tr>
-                            <td><span>4</span></td>
-                            <td><img src="../imgs/nft-art/41.jpeg"></td>
-                            <td>DeGods</td>
-                            <td>147.6K SOL</td>
-                            <td>$4.81M<small class="abajo"> -44.99%</small></td>
-                            <td>339 SOL</td>
-                            <td><a href="#">Ver</a></td>
-                        </tr>
-
-                        <tr>
-                            <td><span>5</span></td>
-                            <td><img src="../imgs/nft-art/32.jpeg"></td>
-                            <td>Doodles</td>
-                            <td>2.3K ETH</td>
-                            <td>$3.71M<small class="abajo"> -23.70%</small></td>
-                            <td>8.10 ETH</td>
-                            <td><a href="#">Ver</a></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-                <!-- <a href="#">Mostrar Mas</a> -->
-
-            </div>
-
-
-            <h2>Usuarios verificados</h2>
-
 html;
 
 echo $contenido;
+
+$tabla = <<<t1
+        {$tab1($resul, $link)}
+        <h2>Usuarios verificados</h2>
+t1;
+
+echo $tabla;
 
 $texto = <<<pag
             <div class="top-colecciones">
@@ -202,52 +136,6 @@ $texto = <<<pag
                     </div>
                 </div>
             </div>
-
-            <!-- Mejores vendedores  -->
-            <div class="vendedores">
-                <h2>Vendedores Destacados</h2>
-                <div class="vendedores-destacados">
-
-                    <div class="vendedor-dest">
-                        <div class="foto-perfil">
-                            <img src="../imgs/perfiles/perfil2.jpeg">
-                        </div>
-                        <div class="msj">
-                            <a href="/">
-                                <p>Elon Musk</p>
-                            </a>
-                            <small>73 ventas</small>
-                        </div>
-                    </div>
-
-                    <div class="vendedor-dest">
-                        <div class="foto-perfil">
-                            <img src="../imgs/perfiles/perfil3.jpeg">
-                        </div>
-                        <div class="msj">
-
-                            <a href="/">
-                                <p>Marcos Galperin</p>
-                            </a>
-                            <small>49 ventas</small>
-                        </div>
-                    </div>
-
-                    <div class="vendedor-dest">
-                        <div class="foto-perfil">
-                            <img src="../imgs/perfiles/perfil4.jpeg">
-                        </div>
-                        <div class="msj">
-                            <!-- <p>Harold Stock</p> -->
-                            <a href="/">
-                                <p>Harold Stock</p>
-                            </a>
-                            <small>32 ventas</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--  -->
         </div>
     </div>
 </body>

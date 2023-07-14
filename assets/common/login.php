@@ -53,8 +53,7 @@ $contenido = <<<LOGIN
                             <img src="../imgs/icons/lock.svg" alt="" class="iconos" style="padding: 1rem;">
                             <input type="password" placeholder="Contraseña" class="userregpass" name="User_Password">
                         </div>
-                        <input type="submit" name="login" class="btn solid" value="Iniciar sesion" >
-                        <a href="../common/usermain.html">Prueba</a>
+                        <input type="submit" name="login" class="btn solid" value="Iniciar sesion">
                     </form>
                 </div>
             </div>
