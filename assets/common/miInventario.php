@@ -42,5 +42,7 @@ function inventario($result){
     echo $abajo;
 }
 
+mysqli_close($link);
+
 
 ?>

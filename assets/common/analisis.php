@@ -4,6 +4,13 @@ include('config.php');
 include('perfil.php');
 include('tablaAnalisis.php');
 
+if ($_SESSION['signed_in'] == 0){
+    session_start();
+    session_destroy();
+    header('Location: http://localhost/pwfinal/assets/common/login.php');
+    die();
+}
+
 $tab2 = 'tablaCompras';
 
 $contenido = <<<html

@@ -4,6 +4,13 @@ include('config.php');
 include('perfil.php');
 include('miInventario.php');
 
+if ($_SESSION['signed_in'] == 0){
+    session_start();
+    session_destroy();
+    header('Location: http://localhost/pwfinal/assets/common/login.php');
+    die();
+}
+
 $inv = 'inventario';
 
 $contenido = <<<html

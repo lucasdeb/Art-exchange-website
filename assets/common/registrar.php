@@ -60,7 +60,10 @@ $conten = <<<html
                         <h3>¿Yá tenés tu cuenta?</h3>
                         <p>Ingresa tus datos y segui coleccionando tus NFTs.</p>
                         <a href="http://localhost/pwfinal/assets/common/login.php">
-                        <button class="btn transparente" id="login-btn">Iniciá Sesión</button>
+                            <button class="btn transparente" id="login-btn">Iniciá Sesión</button>
+                        </a>
+                        <a href="http://localhost/pwfinal/assets/common/index.php">
+                            <button class="btn transparente" id="login-btn">Inicio</button>
                         </a>
                     </div>
                     <img src="../imgs/components/astronaut.svg" class="imagen-login" alt="">

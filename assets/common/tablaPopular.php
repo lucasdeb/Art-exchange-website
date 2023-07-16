@@ -9,7 +9,7 @@ $resul = $link->query($sql);
 
 function cargarTabla($resul, $link){
     echo '<div class="top-colecciones">
-        <h2>Arte popular</h2>
+        <h2>Todo el arte</h2>
                 <table>
                     <thead>
                         <tr>
@@ -37,6 +37,8 @@ function cargarTabla($resul, $link){
         </table>
         </div>';
 }
+
+mysqli_close($link);
 
 
 ?>

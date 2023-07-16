@@ -15,9 +15,9 @@ function destacadas($result){
                         <h1>ID: '.$row["Id_Arte"].'</h1>
                     </div>
                     <img src="'.$row["img_arte"].'" alt="">
-                    <h3>Precio: $'.$row['precio'].'</h3>
+                    <h3>Precio: $'.$row["precio"].'</h3>
+                    <a href="../common/payment.php?id_exac='.$row["Id_Arte"].'">Comprar</a>
                 </div>
-                <a href="../common/payment.php">Comprar</a>
             </div>';
         array_push($dest,$cont);
     }
