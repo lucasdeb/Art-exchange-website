@@ -2,6 +2,16 @@
 
 include('config.php');
 include('perfil.php');
+include('tablaAnalisis.php');
+
+if ($_SESSION['signed_in'] == 0){
+    session_start();
+    session_destroy();
+    header('Location: http://localhost/pwfinal/assets/common/login.php');
+    die();
+}
+
+$tab2 = 'tablaCompras';
 
 $contenido = <<<html
     <!DOCTYPE html>
@@ -60,70 +70,24 @@ $contenido = <<<html
                         <span class="cant-productos">3</span>
                     </a>-->
 
-                    <a href="../../index.php">
+                    <a href="logout.php">
                         <img src="../imgs/icons/right-from-bracket.svg" alt="" class="iconos" style="width: 20px;">
                         <h3>Cerrar Sesión</h3>
                     </a>
 
                 </div>
             </aside>
-            
-            <main>
-                <div class="actividad-reciente">
-                    <div class="top-tabla">
-                        <h1 style="padding-bottom: 10px;">Actividad Reciente</h3>
-                    </div>
-                    <div class="espacio-tabla-actividad">
-                        <table class="tabla-actividad">
-                            <tbody>
-                                <tr class="td-actividad-reciente">
-                                    <td>Compra</td>
-                                    <td>Vitalik_Buterin</td>
-                                    <td>0.13 ETH</td>
-                                    <td>$172.38 USD</td>
-                                </tr>
-                                <tr class="td-actividad-reciente">
-                                    <td>Venta</td>
-                                    <td>Kanye_westok</td>
-                                    <td>1.43 ETH</td>
-                                    <td>$1,896.18 USD</td>
-                                </tr>
-                                <tr class="td-actividad-reciente">
-                                    <td>Compra</td>
-                                    <td>satoshi36</td>
-                                    <td>1.00 ETH</td>
-                                    <td>$1,326.45 USD</td>
-                                </tr>
-                                <tr class="td-actividad-reciente">
-                                    <td>Compra</td>
-                                    <td>bullMarket.ok</td>
-                                    <td>0.12 ETH</td>
-                                    <td>$159.12 USD</td>
-                                </tr>
-                                <tr class="td-actividad-reciente">
-                                    <td>Venta</td>
-                                    <td>cryptoMasacre</td>
-                                    <td>0.46 ETH</td>
-                                    <td>$609.96 USD</td>
-                                </tr>
-                                <tr class="td-actividad-reciente">
-                                    <td>Compra</td>
-                                    <td>ih8.bcra</td>
-                                    <td>12 ETH</td>
-                                    <td>$15,912.23 USD</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </main>
+
+html;
+
+echo $contenido;
+
+$tabla = <<<cont
+            {$tab2($result,$link)}
 
             <!-- panel derecha -->
 
             <div class="derecha">
-
-
-
                 <div class="arriba">
                     <button id="btn-menu">
                         <img src="../imgs/icons/bars.svg" alt="" class="iconos">
@@ -131,7 +95,7 @@ $contenido = <<<html
 
                     <div class="perfil">
                         <div class="informacion">
-                            <p>Hola, <b>{$username}</b></p>
+                            <p>Hola, <b>{$usern}</b></p>
                             <small class="texto">{$nivel}</small>
                         </div>
                     </div>
@@ -141,8 +105,8 @@ $contenido = <<<html
 
     </html>
 
-html;
+cont;
 
-echo $contenido;
+echo $tabla;
 
 ?>

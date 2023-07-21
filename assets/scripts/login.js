@@ -58,10 +58,9 @@ function verificacionRegistro(){
         return false;
     }
 
-    else if(email.includes("@") == false || email.includes(".")){
+    else if(email.includes("@") == false || email.includes(".") == false){
         alert("Por favor ingresar un email valido!")
     }
-
     //validacion de los datos de la contraseña
     else if (password.length>100){
         alert("La contraseña debe tener un maximo de 100 caracteres!");

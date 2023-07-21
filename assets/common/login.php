@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $alias = $_POST['User_Alias'];
     $password = $_POST['User_Password'];
 
-    $sql = "SELECT User_Alias, User_Password, User_Level FROM Usuarios WHERE User_Alias ='$alias' AND User_Password='$password'";
+    $sql = "SELECT User_Alias, User_Password, User_Level, User_Id FROM Usuarios WHERE User_Alias ='$alias' AND User_Password='$password'";
     $result = $link->query($sql);
 
 
@@ -19,11 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         //guardamos el alias y el nivel de usuario
         $_SESSION['User_Alias'] = $datos['User_Alias'];
         $_SESSION['User_Level'] = $datos['User_Level'];
+        $_SESSION['User_Id'] = $datos['User_Id'];
         header('Location: usermain.php');
         die();
-    }
-    else{
-        echo 'Usuario o constraseña incorrecta!';
     }
 }
 
@@ -37,6 +35,7 @@ $contenido = <<<LOGIN
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/index.css">
         <link rel="icon" type="image/x-icon" href="/assets/imgs/misc/favicon.ico">
+        <script src="../scripts/login.js"></script>
         <title>Login</title>
     </head>
 
@@ -54,8 +53,7 @@ $contenido = <<<LOGIN
                             <img src="../imgs/icons/lock.svg" alt="" class="iconos" style="padding: 1rem;">
                             <input type="password" placeholder="Contraseña" class="userregpass" name="User_Password">
                         </div>
-                        <input type="submit" name="login" class="btn solid" value="Iniciar sesion" >
-                        <a href="../common/usermain.html">Prueba</a>
+                        <input type="submit" name="login" class="btn solid" value="Iniciar sesion">
                     </form>
                 </div>
             </div>
@@ -64,15 +62,21 @@ $contenido = <<<LOGIN
                     <div class="contenido">
                         <h3>¿Sos nuevo?</h3>
                         <p>En pocos pasos sumate al mejor marketplace de NFTs y arte digital que vas a conocer.</p>
-                        <a href="http://localhost/pwfinal/assets/common/registrar.php"
-                            <button class="btn transparente" id="login-btn">Registrate</button>
-                        </a>
+                        <div>
+                            <a href="http://localhost/pwfinal/assets/common/registrar.php">
+                                <button class="btn transparente" id="login-btn">Registrate</button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://localhost/pwfinal/assets/common/index.php">
+                                <button class="btn transparente" id="login-btn">Inicio</button>
+                            </a>
+                        </div>
                     </div>
                     <img src="../imgs/components/art-gallery.svg" class="imagen-login" alt="">
                 </div>
             </div>
         </div>
-        <script src="../scripts/login.js"></script>
     </body>
 
     </html>

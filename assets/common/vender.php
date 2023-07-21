@@ -2,6 +2,16 @@
 
 include('config.php');
 include('perfil.php');
+include('miInventario.php');
+
+if ($_SESSION['signed_in'] == 0){
+    session_start();
+    session_destroy();
+    header('Location: http://localhost/pwfinal/assets/common/login.php');
+    die();
+}
+
+$inv = 'inventario';
 
 $contenido = <<<html
         <!DOCTYPE html>
@@ -61,7 +71,7 @@ $contenido = <<<html
                             <span class="cant-productos">3</span>
                         </a>-->
 
-                        <a href="../../index.php">
+                        <a href="logout.php">
                             <img src="../imgs/icons/right-from-bracket.svg" alt="" class="iconos" style="width: 20px;">
                             <h3>Cerrar Sesión</h3>
                         </a>
@@ -70,102 +80,16 @@ $contenido = <<<html
                 </aside>
 
                 <!-- pantalla principal -->
+html;
 
-                <main>
-                    <h1>Vender</h1>
-
-
-                    <h2>Tu inventario publico <img src="../imgs/icons/unlock.svg" alt="" class="iconos" style="width: 20px; float: left;"></h2>
-                    <div class="inventario-usario">
-
-                        <div id="inventario">
-                            <h1>MAYC #39</h1>
-                            <a href="#"><img src="../imgs/nft-art/39.jpeg" alt=""></a>
-                            <h3>Comprado: 08/22</h3>
-                            <h3>Precio piso: 14.6 ETH</h3>
-                            <button class="ver-perfil" onclick="abrir()">Editar</button>
-                            <a href="./art/01.html" class="visitar-perfil"><button class="ver-perfil">Ver mas</button></a>
-                        </div>
-
-                        <div id="inventario">
-                            <h1>Doodles #142</h1>
-                            <a href="#"><img src="../imgs/nft-art/32.jpeg" alt=""></a>
-                            <h3>Comprado: 08/22</h3>
-                            <h3>Precio piso: 14.6 ETH</h3>
-                            <button class="ver-perfil" onclick="abrir()">Editar</button>
-                            <a href="./art/00.html" class="visitar-perfil"><button class="ver-perfil">Ver mas</button></a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="editar-arte" id="editar-arte">
-                        <form action="#" class="editar-arte-formulario">
-                        <h1>Editar</h1>
-                    
-                        <label for="precio"><b>Precio: </b></label>
-                        <input type="number" placeholder="Editar Precio" name="precio" min="0" step="0.1">
-                        
-                        <input type="checkbox" id="privado" name="Privado" value="1">
-                        <label for="privado">Privado: </label>
-                    
-                        <button type="submit">Aceptar</button>
-                        <button type="button" onclick="cerrar()">Cancelar</button>
-                        </form>
-                    </div>
-                    <br>
-                    <!-- <h2>Tu inventario privado <i class="fa-solid fa-lock"></i></h2>
-                    <div class="inventario-usuario">
-
-                        <div id="inventario" class="privado">
-                            <h1>MutantApeYachtClub #39</h1>
-                            <a href="#"><img src="../imgs/nft-art/39.jpeg" alt=""></a>
-                            <h3>Comprado: 08/22</h3>
-                            <h3>Precio piso: 14.6 ETH</h3>
-                            <a href="#" class="visitar-perfil"><button class="ver-perfil">Ver mas</button></a>
-                        </div>
-
-                        <div id="inventario" class="privado">
-                            <h1>Doodles #142</h1>
-                            <a href="#"><img src="../imgs/nft-art/32.jpeg" alt=""></a>
-                            <h3>Comprado: 08/22</h3>
-                            <h3>Precio piso: 14.6 ETH</h3>
-                            <a href="#" class="visitar-perfil"><button class="ver-perfil">Ver mas</button></a>
-                        </div>
-                    </div> -->
-
-                    <h2>Administrar inventario</h2>
-
-                    <div class="top-colecciones">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Coleccion</th>
-                                    <th>ID</th>
-                                    <th>Privado</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>MutantApeYachtClub</td>
-                                    <td>39</td>
-                                    <td><input type="checkbox" name="privado" id="check-priv-pub"></td>
-                                    <td><input type="submit" value="Guardar"><img src="../imgs/icons/floppy-disk.svg" alt="" class="iconos" style="height: 20px; width: 20px; float: left; padding: 0;"></td>
-                                    <!-- <td><a href="#">Ver</a></td> -->
-                                </tr>
-
-                            </tbody>
-                        </table>
+echo $contenido;
 
 
-                </main>
-
+$inventario = <<<inve
+                        {$inv($result)}
                 <!-- panel derecha -->
 
                 <div class="derecha">
-
-
-
                     <div class="arriba">
                         <button id="btn-menu">
                             <img src="../imgs/icons/bars.svg" alt="" class="iconos">
@@ -173,7 +97,7 @@ $contenido = <<<html
 
                         <div class="perfil">
                             <div class="informacion">
-                                <p>Hola, <b>{$username}</b></p>
+                                <p>Hola, <b>{$usern}</b></p>
                                 <small class="texto">{$nivel}</small>
                             </div>
                         </div>
@@ -230,6 +154,8 @@ $contenido = <<<html
 
         </html>
 
-html;
+inve;
+
+echo $inventario;
 
 ?>
