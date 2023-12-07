@@ -88,7 +88,7 @@ $contenido = <<<HTML
 
         <!-- About section -->
 
-        <div class="about">
+        <div id="about">
             <div class="Quienes-somos">
                 <h1 class="titulo-about" style="text-align: center;">Quienes somos</h1>
             </div>
