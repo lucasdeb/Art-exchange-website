@@ -90,7 +90,7 @@ $contenido = <<<html
                                 </tr>
                             </thead>
                             <tbody>
-                                <form method="post" action="subirArte.php?User_Id=1">
+                                <form method="post" action="subirArte.php">
                                 <tr>
                                     <td><input type="number" name="Precio" id="slct-precio" min="0" value="0" step="0.5" style="width: 4rem;"></td>
                                     <td>
