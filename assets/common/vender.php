@@ -4,7 +4,7 @@ include('config.php');
 include('perfil.php');
 include('miInventario.php');
 
-if ($_SESSION['signed_in'] == 0){
+if ($_SESSION['signed_in'] == 0) {
     session_start();
     session_destroy();
     header('Location: http://localhost/pwfinal/assets/common/login.php');
@@ -88,6 +88,14 @@ echo $contenido;
 $inventario = <<<inve
                         {$inv($result)}
                 <!-- panel derecha -->
+
+                <script>
+                    function abrirEdicion(idArte) {
+                        document.getElementById("id_arte_input").value = idArte;
+                        abrir();
+                    }
+                </script>
+
 
                 <div class="derecha">
                     <div class="arriba">

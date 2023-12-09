@@ -51,7 +51,12 @@ function fotosRandom() {
 function abrir() {
     document.getElementById("editar-arte").style.display = "block";
 }
-  
-  function cerrar() {
+
+function cerrar() {
     document.getElementById("editar-arte").style.display = "none";
+}
+
+function abrirEdicion(idArte) {
+    document.getElementById("id_arte_input").value = idArte;
+    abrir();
 }

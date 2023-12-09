@@ -834,6 +834,7 @@ html {
     gap: 1.6rem;
     /* background: lightgray; */
     padding: 2rem;
+    overflow-x: visible;
 }
 
 .container-usermain main .informacion i {
@@ -1126,7 +1127,6 @@ html {
 .container-usermain .derecha .perfil {
     display: flex;
     gap: 2rem;
-    text-align: right;
 }
 
 .container-usermain .derecha .vendedores {

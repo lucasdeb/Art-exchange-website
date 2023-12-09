@@ -10,7 +10,7 @@ $perf = 'perfil';
 $tab1 = 'cargarTabla';
 
 
-if ($_SESSION['signed_in'] == 0){
+if ($_SESSION['signed_in'] == 0) {
     session_start();
     session_destroy();
     header('Location: http://localhost/pwfinal/assets/common/login.php');

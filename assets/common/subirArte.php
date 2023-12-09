@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $img = $_POST['img_arte'];
     $precio = $_POST['Precio'];
@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if (mysqli_query($link, $sql)) {
         echo "It worked";
-    } 
-    else {
-        echo "What the fuck";
+        header('Location: usermain.php');
+    } else {
+        echo "Algo salio mal...";
     }
 }
 ?>
