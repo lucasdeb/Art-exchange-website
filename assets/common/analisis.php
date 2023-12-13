@@ -51,7 +51,7 @@ $contenido = <<<html
 
                     <a href="./vender.php">
                         <img src="../imgs/icons/cash-register.svg" alt="" class="iconos" style="width: 20px;">
-                        <h3>Vender</h3>
+                        <h3>Inventario</h3>
                     </a>
 
                     <a href="./subir.php">

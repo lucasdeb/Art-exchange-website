@@ -5,7 +5,7 @@ include('config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $precio = $_POST['precio'];
     $id_arte = $_POST['id_arte'];
-    $priv = (int) $_POST['privado'];
+    $priv = (int) $_POST['Privado'];
 
     if (is_numeric($precio) && is_numeric($id_arte) && is_numeric($priv)) {
         actualizarPrecio($link, $precio, $id_arte, $priv);
@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function actualizarPrecio($link, $valor, $id, $priv)
 {
     $sql = "UPDATE Arte SET Precio='$valor', Privado='$priv' WHERE Id_Arte='$id'";
+    echo $priv;
     if ($link->query($sql)) {
         echo "Precio actualizado con éxito.";
         header("Location: vender.php");

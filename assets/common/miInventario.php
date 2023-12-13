@@ -9,7 +9,7 @@ $result = $link->query($sql);
 function inventario($result)
 {
     echo '<main>
-    <h1>Vender</h1>
+    <h1>Inventario</h1>
     <h2>Tu inventario publico <img src="../imgs/icons/unlock.svg" alt="" class="iconos" style="width: 20px; float: left;"></h2>
     <div class="inventario-usario">';
 

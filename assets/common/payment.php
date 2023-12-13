@@ -12,10 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $row = mysqli_fetch_assoc($test);
     $vendedor = (int) $row["User_Id"];
     $precio = (int) $row["Precio"];
+    $hora = date("Y-m-d");
 
     echo $vendedor, $precio, $num, $new;
 
-    $compra = "INSERT INTO Compras (Comprador, Vendedor, Id_arte, Precio) VALUES ('$new','$vendedor','$num', '$precio')";
+    $compra = "INSERT INTO Compras (Comprador, Vendedor, Id_compra, Id_arte, Precio, Hora) VALUES ('$new','$vendedor',NULL,'$num', '$precio', '$hora')";
+
+    echo "($compra)";
 
     mysqli_query($link, $compra);
 

@@ -52,7 +52,7 @@ $contenido = <<<html
 
                         <a href="./vender.php" class="activo">
                             <img src="../imgs/icons/cash-register.svg" alt="" class="iconos" style="width: 20px;">
-                            <h3>Vender</h3>
+                            <h3>Inventario</h3>
                         </a>
 
                         <a href="./subir.php">
@@ -110,53 +110,6 @@ $inventario = <<<inve
                             </div>
                         </div>
                     </div>
-
-                    <!-- 
-                    <div class="vendedores">
-                        <h2>Vendedores Destacados</h2>
-                        <div class="vendedores-destacados">
-
-                            <div class="vendedor-dest">
-                                <div class="foto-perfil">
-                                    <img src="../imgs/perfiles/perfil2.jpeg">
-                                </div>
-                                <div class="msj">
-                                    <a href="/">
-                                        <p>Elon Musk</p>
-                                    </a>
-                                    <small>73 ventas</small>
-                                </div>
-                            </div>
-
-                            <div class="vendedor-dest">
-                                <div class="foto-perfil">
-                                    <img src="../imgs/perfiles/perfil3.jpeg">
-                                </div>
-                                <div class="msj">
-
-                                    <a href="/">
-                                        <p>Marcos Galperin</p>
-                                    </a>
-                                    <small>49 ventas</small>
-                                </div>
-                            </div>
-
-                            <div class="vendedor-dest">
-                                <div class="foto-perfil">
-                                    <img src="../imgs/perfiles/perfil4.jpeg">
-                                </div>
-                                <div class="msj">
-                                    <a href="/">
-                                        <p>Harold Stock</p>
-                                    </a>
-                                    <small>32 ventas</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> -->
-
                 </div>
         </body>
 

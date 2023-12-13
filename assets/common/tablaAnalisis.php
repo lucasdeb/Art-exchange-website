@@ -6,7 +6,8 @@ $sql = "SELECT Comprador, Vendedor, Id_compra, Id_arte, Precio, Hora FROM Compra
 
 $result = $link->query($sql);
 
-function tablaCompras($result,$link){
+function tablaCompras($result, $link)
+{
     echo '<main>
         <div class="actividad-reciente">
             <div class="top-tabla">
@@ -28,10 +29,10 @@ function tablaCompras($result,$link){
         $arteUserId = $row['User_Id'];
         $query = "SELECT U.User_Alias FROM Usuarios U JOIN Compras C ON U.User_Id = C.Comprador WHERE C.Comprador = $arteUserId";
         echo '<tr class="td-actividad-reciente">
-            <td>'.$row['Comprador'].'</td>
-            <td>'.$row['Vendedor'].'</td>
-            <td>'.$row['Precio'].'</td>
-            <td>'.$row['Hora'].'</td>
+            <td>' . $row['Comprador'] . '</td>
+            <td>' . $row['Vendedor'] . '</td>
+            <td>' . $row['Precio'] . '</td>
+            <td>' . $row['Hora'] . '</td>
         </tr>';
     }
     echo '</tbody>
@@ -40,7 +41,5 @@ function tablaCompras($result,$link){
         </div>
         </main>';
 }
-
-
 
 ?>
