@@ -14,19 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $precio = (int) $row["Precio"];
     $hora = date("Y-m-d");
 
-    echo $vendedor, $precio, $num, $new;
+    echo "vendedor: " . $vendedor . "precio: " . $precio . "hora: " . $hora . "comprador: " . $new . "id arte: " . $num . "";
 
     $compra = "INSERT INTO Compras (Comprador, Vendedor, Id_compra, Id_arte, Precio, Hora) VALUES ('$new','$vendedor',NULL,'$num', '$precio', '$hora')";
-
-    echo "($compra)";
-
-    mysqli_query($link, $compra);
-
-    $sql = "UPDATE Arte SET User_Id='$new' WHERE Id_Arte='$num'";
-    if (mysqli_query($link, $sql)) {
-        header('Location: vender.php');
+    if (!mysqli_query($link, $compra)) {
+        echo "Error al insertar en Compras: " . mysqli_error($link);
     } else {
-        echo "No se que paso...";
+        mysqli_query($link, $compra);
+
+        $sql = "UPDATE Arte SET User_Id='$new' WHERE Id_Arte='$num'";
+        if (mysqli_query($link, $sql)) {
+            header('Location: vender.php');
+        } else {
+            echo "No se que paso...";
+        }
     }
 }
 

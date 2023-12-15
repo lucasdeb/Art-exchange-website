@@ -5,7 +5,7 @@ include('config.php');
 
 $sql = "SELECT Id_Arte, User_Id, img_arte, precio, Privado FROM Arte";
 
-$result = $link->query($sql);
+$result = mysqli_query($link, $sql);
 
 function destacadas($result)
 {
@@ -13,7 +13,7 @@ function destacadas($result)
     while ($row = mysqli_fetch_assoc($result)) {
         if ($row['Privado'] == 0) {
             $cont = '<div class="colecciones-destacada-1">
-                    <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Destacada</label>
+                    <img src="../imgs/icons/fire.svg" alt="" class="iconos" style="width: 20px;"><label for="">Ultimo</label>
                     <div class="medio">
                         <div class="izquierda">
                             <h1>ID: ' . $row["Id_Arte"] . '</h1>
@@ -26,7 +26,7 @@ function destacadas($result)
             array_push($dest, $cont);
         }
     }
-    rsort($dest, 1);
+    rsort($dest, 1); //El 1 es para que se ordene por valores numericos
     return array_reverse($dest);
 }
 

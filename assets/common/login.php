@@ -1,16 +1,16 @@
 <?php
 include('config.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $alias = $_POST['User_Alias'];
     $password = $_POST['User_Password'];
 
     $sql = "SELECT User_Alias, User_Password, User_Level, User_Id FROM Usuarios WHERE User_Alias ='$alias' AND User_Password='$password'";
-    $result = $link->query($sql);
+    $result = mysqli_query($link, $sql);
 
 
     // Verificamos que exista una fila que cumpla con esas condiciones (1 si 0 no)
-    if ($result->num_rows == 1) {
+    if (mysqli_num_rows($result) == 1) {
         echo "Conexión establecida";
         $datos = mysqli_fetch_assoc($result);
 
@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['User_Level'] = $datos['User_Level'];
         $_SESSION['User_Id'] = $datos['User_Id'];
         header('Location: usermain.php');
-        die();
     }
 }
 

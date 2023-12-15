@@ -1,7 +1,5 @@
 <?php
 
-include('config.php');
-
 $contenido = <<<HTML
     <!DOCTYPE html>
     <html lang="en">

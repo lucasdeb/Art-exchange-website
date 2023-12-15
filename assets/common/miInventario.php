@@ -4,7 +4,7 @@ include('config.php');
 
 $sql = "SELECT Id_Arte, User_Id, Privado, img_arte, Precio FROM Arte";
 
-$result = $link->query($sql);
+$result = mysqli_query($link, $sql);
 
 function inventario($result)
 {

@@ -16,7 +16,7 @@ function actualizarPrecio($link, $valor, $id, $priv)
 {
     $sql = "UPDATE Arte SET Precio='$valor', Privado='$priv' WHERE Id_Arte='$id'";
     echo $priv;
-    if ($link->query($sql)) {
+    if (mysqli_query($link, $sql)) {
         echo "Precio actualizado con éxito.";
         header("Location: vender.php");
     } else {

@@ -1,7 +1,5 @@
 <?php
 
-//Arreglar validacion de campo on submit
-
 include('config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['User_Alias']) && isset($_POST['User_Email']) && isset($_POST['User_Password'])) {
@@ -11,13 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['User_Alias']) && isset
 
     $sql = "INSERT INTO Usuarios (User_Alias, User_Email, User_Password, User_Level) VALUES ('$alias', '$email', '$password', 0)";
 
-    if ($link->query($sql) == TRUE) {
-        echo "<script>alert('Los datos se guardaron con exito!')</script>";
+    if (mysqli_query($link, $sql)) {
+        echo "<script>alert('Los datos se guardaron con exito!');window.location.href = 'http://localhost/pwfinal/assets/common/login.php';</script>";
     } else {
-        echo "<script>alert('Algo salio mal')</script>";
+        echo "<script>alert('Algo salio mal');</script>";
     }
-    header("Location: http://localhost/pwfinal/assets/common/login.php");
-    die();
 }
 
 

@@ -4,7 +4,7 @@ include('config.php');
 
 $sql = "SELECT Id_Arte, User_Id, img_arte, Precio, Privado FROM Arte ORDER BY Precio DESC";
 
-$resul = $link->query($sql);
+$resul = mysqli_query($link, $sql);
 
 
 function cargarTabla($resul, $link)
@@ -25,15 +25,14 @@ function cargarTabla($resul, $link)
         $arteUserId = $row['User_Id'];
 
         $query = "SELECT U.User_Alias FROM Usuarios U JOIN Arte A ON U.User_Id = A.User_Id WHERE A.User_Id = $arteUserId";
-        $getit = $link->query($query);
-        $userAlias = $getit->fetch_assoc();
+        $getit = mysqli_query($link, $query);
+        $userAlias = mysqli_fetch_assoc($getit);
         if ($row['Privado'] == '0') {
             echo '<tr>
                 <td><img src="' . $row['img_arte'] . '"></td>
                 <td>' . $row['Id_Arte'] . '</td>
                 <td>' . $userAlias['User_Alias'] . '</td>
                 <td>' . $row['Precio'] . '</td>
-                <td>' . $row['Privado'] . '</td>
                 <td><a style="color: #a2a4f5;" href="../common/payment.php?id_exac=' . $row["Id_Arte"] . '">Comprar</a></td>
             </tr>';
         }

@@ -2,9 +2,9 @@
 
 include('config.php');
 
-$sql = "SELECT Comprador, Vendedor, Id_compra, Id_arte, Precio, Hora FROM Compras ORDER BY Hora DESC";
+$sql = "SELECT Comprador, Vendedor, Id_compra, Id_arte, Precio, Hora FROM Compras";
 
-$result = $link->query($sql);
+$result = mysqli_query($link, $sql);
 
 function tablaCompras($result, $link)
 {
@@ -17,6 +17,7 @@ function tablaCompras($result, $link)
                 <table class="tabla-actividad">
                     <thead>
                         <tr>
+                            <th>ID Arte</th>
                             <th>Comprador</th>
                             <th>Vendedor</th>
                             <th>Precio</th>
@@ -26,9 +27,8 @@ function tablaCompras($result, $link)
                     <tbody>';
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $arteUserId = $row['User_Id'];
-        $query = "SELECT U.User_Alias FROM Usuarios U JOIN Compras C ON U.User_Id = C.Comprador WHERE C.Comprador = $arteUserId";
         echo '<tr class="td-actividad-reciente">
+            <td>' . $row['Id_arte'] . '</td>
             <td>' . $row['Comprador'] . '</td>
             <td>' . $row['Vendedor'] . '</td>
             <td>' . $row['Precio'] . '</td>

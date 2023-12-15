@@ -147,7 +147,6 @@ $contenido = <<<html
                             </tbody>
                         </table>
                     </div>
-
                 </main>
 
                 <!-- panel derecha -->

@@ -1175,16 +1175,12 @@ html {
     width: 100%;
 }
 
-.tabla-actividad tr:nth-child(2n + 1) {
-    background-color: var(--light-violet-select);
-}
-
-.tabla-actividad td:nth-child(1) {
-    font-weight: 600;
+.tabla-actividad tr:nth-child(2n) {
+    background-color: var(--light-violet);
 }
 
 .tabla-actividad td:last-child {
-    text-align: end;
+    text-align: center;
 }
 
 .espacio-tabla-actividad {
@@ -1195,9 +1191,9 @@ html {
     padding-left: 30px;
 }
 
-.td-actividad-reciente {
+.tabla-actividad .td-actividad-reciente {
     border-bottom: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     border-radius: 2px;
 
 }
