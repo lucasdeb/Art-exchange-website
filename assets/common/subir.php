@@ -4,7 +4,7 @@ include('config.php');
 include('perfil.php');
 include('subirArte.php');
 
-if ($_SESSION['signed_in'] == 0){
+if ($_SESSION['signed_in'] == 0) {
     session_start();
     session_destroy();
     header('Location: http://localhost/pwfinal/assets/common/login.php');
@@ -87,12 +87,13 @@ $contenido = <<<html
                                 <tr>
                                     <th>Precio</th>
                                     <th>Subir Foto</th>
+                                    <th>Nombre Arte</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <form method="post" action="subirArte.php">
                                 <tr>
-                                    <td><input type="number" name="Precio" id="slct-precio" min="0" value="0" step="0.5" style="width: 4rem;"></td>
+                                    <td><input type="number" name="Precio" id="slct-precio" min="1" value="0" step="0.5" style="width: 4rem;" required></td>
                                     <td>
                                         <select name="img_arte">
                                             <option value="../imgs/nft-art/0.jpeg">0.jpeg</option>
@@ -141,6 +142,7 @@ $contenido = <<<html
                                             <option value="../imgs/nft-art/43.jpeg">43.jpeg</option>
                                         </select>
                                     </td>
+                                    <td><input type="text" placeholder="Nombre de Obra" name="alias_arte" required></td>
                                     <td><input type="submit"></td>
                                 </tr>
                                 </form>

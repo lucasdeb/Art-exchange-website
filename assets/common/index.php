@@ -39,7 +39,7 @@ $contenido = <<<HTML
         <section id="home-container">
             <div class="inner-width">
 
-                <div class="blob">
+                <!-- <div class="blob">
                     <span class="blob1"></span>
                     <span class="blob2"></span>
                     <span class="blob3"></span>
@@ -49,7 +49,7 @@ $contenido = <<<HTML
                     <span class="blob7"></span>
                     <span class="blob8"></span>
                     <span class="blob9"></span>
-                </div>
+                </div> -->
                 <div class="content">
                     <h1 class="title" id="titulo">¡Hola!</h1>
                     <img src="../imgs/nft-art/10.jpeg" alt="" class="home-pic">

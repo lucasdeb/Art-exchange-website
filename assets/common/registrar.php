@@ -2,7 +2,17 @@
 
 include('config.php');
 
+$query = "SELECT User_Alias FROM Usuarios";
+$getit = mysqli_query($link, $query);
+
+while ($row = mysqli_fetch_assoc($getit)) {
+    if ($row['User_Alias'] == $_POST['User_Alias']) {
+        echo "<script>alert('El usuario ya existe!');window.location.href = 'http://localhost/pwfinal/assets/common/registrar.php';</script>";
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['User_Alias']) && isset($_POST['User_Email']) && isset($_POST['User_Password'])) {
+
     $alias = $_POST['User_Alias'];
     $email = $_POST['User_Email'];
     $password = $_POST['User_Password'];

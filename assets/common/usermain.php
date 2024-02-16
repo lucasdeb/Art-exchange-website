@@ -93,8 +93,6 @@ $contenido = <<<html
             <div class="informacion">
             {$dest[0]}{$dest[1]}{$dest[2]}
             </div>
-
-            <!-- Top arte (Arte mas caro) -->
 html;
 
 echo $contenido;

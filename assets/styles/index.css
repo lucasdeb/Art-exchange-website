@@ -19,7 +19,6 @@
 }
 
 * {
-    /* font-family: 'Open Sans', sans-serif; */
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: var(--black);
     font-size: 16px;
@@ -113,8 +112,6 @@ html {
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
-    /* margin-bottom: 10vh; */
-    /* transform: translate(-50%, -50%); */
 }
 
 .home-pic div {
@@ -124,52 +121,6 @@ html {
 
 .home-pic:hover {
     animation: shake 5s infinite linear alternate;
-}
-
-@keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-
-    10% {
-        transform: translate(-1px, -2px) rotate(-1deg);
-    }
-
-    20% {
-        transform: translate(-3px, 0px) rotate(1deg);
-    }
-
-    30% {
-        transform: translate(3px, 2px) rotate(0deg);
-    }
-
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    50% {
-        transform: translate(-1px, 2px) rotate(-1deg);
-    }
-
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    70% {
-        transform: translate(3px, 1px) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate(-1px, -1px) rotate(1deg);
-    }
-
-    90% {
-        transform: translate(1px, 2px) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
-    }
 }
 
 /* navbar */
@@ -311,11 +262,6 @@ html {
     background-color: var(--fuchsia);
 }
 
-
-/* #home-container .blob {
-    max-height: 50vh;
-} */
-
 /* seccion destacadas */
 
 #galeria-container .inner-width {
@@ -453,7 +399,6 @@ html {
 }
 
 /* Componente login */
-
 
 #login-container:before {
     content: '';
@@ -1019,7 +964,6 @@ html {
     transition: 0.5s linear;
 }
 
-/* CSS */
 .boton-compra {
     background-color: var(--light-violet);
     border-radius: 0.5rem;
@@ -1072,9 +1016,7 @@ html {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
 }
 
 .container-usermain main .top-colecciones table tbody td {
@@ -1090,20 +1032,8 @@ html {
     border-radius: 15%;
 }
 
-.container-usermain main .top-colecciones table tbody td .abajo {
-    color: var(--peligro);
-}
-
-.container-usermain main .top-colecciones table tbody td .arriba {
-    color: var(--exito);
-}
-
 .container-usermain main .top-colecciones table tbody tr:last-child td {
     border: none;
-}
-
-.container-usermain main .top-colecciones table tbody tr:hover td {
-    scale: 1.15;
 }
 
 /* main user screen lado derecha */
@@ -1116,7 +1046,6 @@ html {
 .container-usermain .derecha .arriba {
     display: flex;
     justify-content: end;
-    /* background-color: var(--fuchsia); */
     gap: 2rem;
 }
 
@@ -1144,7 +1073,6 @@ html {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
     margin: 1rem;
@@ -1158,8 +1086,9 @@ html {
     margin-bottom: 1rem;
 }
 
+/* Tabla actividad */
 
-.actividad-reciente {
+.container-usermain main .actividad-reciente {
     padding-top: 10px;
     border-style: solid;
     border-width: 2px;
@@ -1167,7 +1096,7 @@ html {
     border-color: #000;
 }
 
-.tabla-actividad {
+.container-usermain main .tabla-actividad {
     border-spacing: 30px;
     border-radius: 10px;
     border-color: #5B5B5B;
@@ -1175,15 +1104,15 @@ html {
     width: 100%;
 }
 
-.tabla-actividad tr:nth-child(2n) {
-    background-color: var(--light-violet);
+.container-usermain main .tabla-actividad tr:nth-child(2n) {
+    background-color: var(--light-violet-select);
 }
 
-.tabla-actividad td:last-child {
+.container-usermain main .tabla-actividad td:last-child {
     text-align: center;
 }
 
-.espacio-tabla-actividad {
+.container-usermain main .espacio-tabla-actividad {
     padding: 5px 30px 25px;
     padding-top: 5px;
     padding-right: 30px;
@@ -1191,20 +1120,21 @@ html {
     padding-left: 30px;
 }
 
-.tabla-actividad .td-actividad-reciente {
+.container-usermain main .tabla-actividad .td-actividad-reciente {
     border-bottom: 1px solid #dddddd;
     text-align: center;
     border-radius: 2px;
-
 }
 
-.top-tabla {
+.container-usermain main .top-tabla {
     padding: 22px 30px;
     padding-top: 22px;
     padding-right: 30px;
     padding-bottom: 22px;
     padding-left: 30px;
 }
+
+/* Editar arte */
 
 .editar-arte{
     display: none;

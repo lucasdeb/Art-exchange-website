@@ -56,7 +56,9 @@ function cerrar() {
     document.getElementById("editar-arte").style.display = "none";
 }
 
-function abrirEdicion(idArte) {
+function abrirEdicion(idArte, precio, priv) {
     document.getElementById("id_arte_input").value = idArte;
+    //document.getElementById("precio").value = precio;
+    //document.getElementById("privado").checked = priv === 1;
     abrir();
 }
