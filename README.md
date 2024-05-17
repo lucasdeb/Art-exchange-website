@@ -15,13 +15,11 @@ Nuestro grupo trabajará en conjunto en un repositorio de Github en el que se pu
 
 ## Integrantes
 
-| **Tomas Prodan**        | tomy.prodan@gmail.com  | <img src="./assets/imgs/misc/tomas-prodan.jpeg" alt="tomas-prodan" width="200"/> |
-| ----------------------- | ---------------------- | --------------------------------------------------------------------------- |
-| **Lucas Debarbieri**    | lucasdeb1702@gmail.com |                                                                             |
-| **Joaquin Judez Rivas** | joaquinjudezrivas@gmail.com  |   
+| ----------------------- | ---------------------- |
+| **Lucas Debarbieri**    | lucasdeb@uca.edu.ar |
 
 
----
+--
 
 
 ## Información de interés
@@ -31,10 +29,10 @@ Nuestro grupo trabajará en conjunto en un repositorio de Github en el que se pu
 - [x] 19/08/22: Entrega de propuesta
 - [x] 26/08/22: Consultas del proyecto HTML y CSS 
 - [x] 02/09/22: Consultas del proyecto HTML y CSS 
-- [ ] 23/09/22: Consultas del proyecto HTML, CSS y JavaScript
-- [ ] 21/10/22: Consultas del proyecto Base de Datos
-- [ ] 28/10/22: Consultas del proyecto Base de Datos
-- [ ] 18/11/22: Cierre proyecto final
+- [x] 23/09/22: Consultas del proyecto HTML, CSS y JavaScript
+- [x] 21/10/22: Consultas del proyecto Base de Datos
+- [x] 28/10/22: Consultas del proyecto Base de Datos
+- [x] 18/11/22: Cierre proyecto final
 
 
 https://bit.ly/uca-pweb
