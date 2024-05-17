@@ -13,15 +13,6 @@ Nuestro grupo trabajará en conjunto en un repositorio de Github en el que se pu
 
 **Referencias:** Opensea, Rarible
 
-## Integrantes
-
-| ----------------------- | ---------------------- |
-| **Lucas Debarbieri**    | lucasdeb@uca.edu.ar |
-
-
---
-
-
 ## Información de interés
 
 **Fechas importantes:**
